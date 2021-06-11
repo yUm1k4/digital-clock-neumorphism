@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <!-- Somehow I got an error, so I comment the title, just uncomment to show -->
+    <title>Digital Clock Neumorphism | Zainudin Abdullah</title>
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="57x57" href="https://yum1k4.github.io/img/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="https://yum1k4.github.io/img/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://yum1k4.github.io/img/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="https://yum1k4.github.io/img/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://yum1k4.github.io/img/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="https://yum1k4.github.io/img/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://yum1k4.github.io/img/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://yum1k4.github.io/img/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://yum1k4.github.io/img/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="https://yum1k4.github.io/img/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://yum1k4.github.io/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="https://yum1k4.github.io/img/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://yum1k4.github.io/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="https://yum1k4.github.io/img/favicon/manifest.json">
+    <meta name="msapplication-TileImage" content="https://yum1k4.github.io/img/favicon/ms-icon-144x144.png">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <!-- Site Name, Title, and Description to be displayed -->
+    <meta property="og:site_name" content="Digital Clock Neumorphism | Zainudin Abdullah">
+    <meta property="og:title" content="Digital Clock Neumorphism | Zainudin Abdullah">
+    <meta property="og:description"
+        content="Realtime jam digital berdasarkan device yang kita gunakan.">
+
+    <!-- Image to display -->
+    <meta property="og:image" content="https://yum1k4.github.io/img/zainimg.jpg">
+    <!-- No need to change anything here -->
+    <meta property="og:type" content="website" />
+    <meta property="og:image:type" content="image/jpeg">
+    <!-- Website to visit when clicked in fb or WhatsApp-->
+    <meta property="og:url" content="https://yum1k4.github.io/digital-clock-neumorphism">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="clock">
+        <div class="display">
+        </div>
+    </div>
+    <script>
+        setInterval(function () {
+            const clock = document.querySelector(".display");
+            let time = new Date();
+            let sec = time.getSeconds();
+            let min = time.getMinutes();
+            let hr = time.getHours();
+            let day = 'AM';
+            if (hr > 12) {
+                day = 'PM';
+                hr = hr - 12;
+            }
+            if (hr == 0) {
+                hr = 12;
+            }
+            if (sec < 10) {
+                sec = '0' + sec;
+            }
+            if (min < 10) {
+                min = '0' + min;
+            }
+            if (hr < 10) {
+                hr = '0' + hr;
+            }
+            clock.textContent = hr + ':' + min + ':' + sec + " " + day;
+        });
+    </script>
+
+</body>
+
+</html>
